@@ -1,12 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
+import { UserListComponent } from './components/user-list/user-list.component';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 
-xdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        UserListComponent
       ],
+      imports: [HttpClientModule,MatChipsModule, MatIconModule]
     }).compileComponents();
   }));
 
@@ -14,18 +20,5 @@ xdescribe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'alfresco'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('alfresco');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('alfresco app is running!');
   });
 });
