@@ -117,8 +117,10 @@ describe('UserListComponent', () => {
     component.users = users;
     fixture.detectChanges();
     let chips = fixture.nativeElement.querySelectorAll('mat-chip');
-    expect(chips[0].classList.contains('mat-chip-with-trailing-icon')).toBeFalsy();
-    expect(chips[1].classList.contains('mat-chip-with-trailing-icon')).toBeTruthy();
+    component.users.forEach((user, index) => {
+        expect(chips[index].classList.contains('mat-chip-with-trailing-icon')).toBe(user.entry.enabled ? true : false);
+        expect(window.getComputedStyle(fixture.nativeElement.querySelectorAll('mat-chip')[index]).backgroundColor).toBe(user.entry.enabled ? 'rgb(173, 255, 47)' : 'rgb(224, 224, 224)');
+    });
   });
 
 });
