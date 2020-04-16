@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  apiUrl: 'https://api-explorer.alfresco.com/alfresco/api/-default-/public/alfresco/versions/1/people',
   production: false
 };
 

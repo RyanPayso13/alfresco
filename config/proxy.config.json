@@ -1,0 +1,9 @@
+{
+  "/api/*": {
+      "target": "https://api-explorer.alfresco.com/alfresco",
+      "secure": true,
+      "logLevel": "debug",
+      "changeOrigin": true,
+      "headers": {"Authorization": "Basic YWRtaW46YWRtaW4="}
+  }
+}
