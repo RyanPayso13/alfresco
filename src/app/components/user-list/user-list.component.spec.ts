@@ -117,7 +117,6 @@ describe('UserListComponent', () => {
     component.users = users;
     fixture.detectChanges();
     let chips = fixture.nativeElement.querySelectorAll('mat-chip');
-    console.log(chips);
     expect(chips[0].classList.contains('mat-chip-with-trailing-icon')).toBeFalsy();
     expect(chips[1].classList.contains('mat-chip-with-trailing-icon')).toBeTruthy();
   });
