@@ -20,10 +20,7 @@ export class UserListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    if(this.subscription){
       this.subscription.unsubscribe();
-    }
-
   }
 
   remove(id: string): Array<User>{
